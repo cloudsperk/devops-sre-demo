@@ -1,0 +1,15 @@
+{% extends 'layout.html' %}
+
+{% block title %}Login | Parking Registration{% endblock %}
+
+{% block content %}
+  <section class="hero">
+    <h1>Vehicle Parking Registration</h1>
+    <p>Register with your mobile number, check in your vehicle, and checkout securely with OTP verification.</p>
+    <form action="{{ url_for('login') }}" method="post" class="auth-form">
+      <label for="mobile">Mobile Number</label>
+      <input id="mobile" name="mobile" type="tel" pattern="\d{10,15}" placeholder="Enter mobile number" required>
+      <button type="submit" class="btn">Continue</button>
+    </form>
+  </section>
+{% endblock %}

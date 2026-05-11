@@ -1,0 +1,26 @@
+{% extends 'layout.html' %}
+
+{% block title %}Check In | Parking Registration{% endblock %}
+
+{% block content %}
+  <section class="hero">
+    <h1>Register Your Vehicle</h1>
+    <p>Provide your bike or car details and start a parking session immediately.</p>
+
+    <form action="{{ url_for('checkin') }}" method="post" class="auth-form">
+      <label for="vehicle_type">Vehicle Type</label>
+      <input id="vehicle_type" name="vehicle_type" type="text" placeholder="Bike, Car, Scooter" required>
+
+      <label for="vehicle_number">Vehicle Number</label>
+      <input id="vehicle_number" name="vehicle_number" type="text" placeholder="ABC-1234" required>
+
+      <label for="vehicle_model">Vehicle Model</label>
+      <input id="vehicle_model" name="vehicle_model" type="text" placeholder="Model name or color" required>
+
+      <label for="notes">Notes</label>
+      <input id="notes" name="notes" type="text" placeholder="Anything else to note">
+
+      <button type="submit" class="btn">Check In</button>
+    </form>
+  </section>
+{% endblock %}

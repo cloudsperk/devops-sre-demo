@@ -1,0 +1,75 @@
+{% extends 'layout.html' %}
+
+{% block title %}Dashboard | Parking Registration{% endblock %}
+
+{% block content %}
+  <section class="hero">
+    <h1>Welcome back</h1>
+    <p>Manage your parking sessions, view your history, and checkout securely with OTP verification.</p>
+  </section>
+
+  <section class="action-row">
+    <div class="action-card">
+      <h3>Active Parking</h3>
+      <p>{{ record is not none and 'Yes' or 'No' }}</p>
+    </div>
+    <div class="action-card">
+      <h3>Total Sessions</h3>
+      <p>{{ history|length }}</p>
+    </div>
+    <div class="action-card">
+      <h3>Vehicle Status</h3>
+      <p>{{ record is not none and 'Checked in' or 'Ready to park' }}</p>
+    </div>
+  </section>
+
+  <section class="quick-actions">
+    <a href="{{ url_for('checkin') }}" class="btn">Register Vehicle</a>
+    {% if record %}
+      <a href="{{ url_for('checkout') }}" class="btn">Checkout with OTP</a>
+    {% endif %}
+  </section>
+
+  {% if record %}
+    <div class="card active-card">
+      <h2>Active Parking Session</h2>
+      <p><strong>Vehicle:</strong> {{ record.vehicle_type }} / {{ record.vehicle_number }}</p>
+      <p><strong>Model:</strong> {{ record.vehicle_model }}</p>
+      <p><strong>Parked at:</strong> {{ record.checkin_time }}</p>
+      <p><strong>Status:</strong> In parking, owner's responsibility</p>
+    </div>
+  {% else %}
+    <div class="card notice-card">
+      <h2>No active parking found</h2>
+      <p>Register a new parking session before you park your vehicle. Once checked in, you can checkout using an OTP.</p>
+    </div>
+  {% endif %}
+
+  <div class="history-card">
+    <h2>Parking History</h2>
+    {% if history %}
+      <table>
+        <thead>
+          <tr>
+            <th>Vehicle</th>
+            <th>Check-in</th>
+            <th>Check-out</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for item in history|reverse %}
+            <tr>
+              <td>{{ item.vehicle_type }} / {{ item.vehicle_number }}</td>
+              <td>{{ item.checkin_time }}</td>
+              <td>{{ item.checkout_time or 'Still parked' }}</td>
+              <td>{{ item.checkout_time and 'Completed' or 'Active' }}</td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    {% else %}
+      <p class="small-note">No parking sessions have been recorded yet.</p>
+    {% endif %}
+  </div>
+{% endblock %}

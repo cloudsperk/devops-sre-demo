@@ -1,0 +1,22 @@
+{
+  "users": {
+    "9620282414": {
+      "mobile": "9620282414",
+      "registered_at": "2026-05-11 16:56:05"
+    }
+  },
+  "records": [
+    {
+      "id": "9620282414-1",
+      "mobile": "9620282414",
+      "vehicle_type": "bike",
+      "vehicle_number": "ABC-1234",
+      "vehicle_model": "RED",
+      "notes": "check",
+      "checkin_time": "2026-05-11 17:01:23",
+      "checkout_time": "2026-05-11 17:02:29",
+      "otp": null,
+      "otp_requested_at": null
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{% extends 'layout.html' %}
+
+{% block title %}Checkout | Parking Registration{% endblock %}
+
+{% block content %}
+  <section class="hero">
+    <h1>Checkout Verification</h1>
+    <p>Enter the OTP provided for your active parking session to complete the checkout.</p>
+
+    {% if record %}
+      <div class="card info-card">
+        <p><strong>Vehicle:</strong> {{ record.vehicle_type }} / {{ record.vehicle_number }}</p>
+        <p><strong>Parked at:</strong> {{ record.checkin_time }}</p>
+        {% if record.otp %}
+          <p class="otp-note">Your OTP: <span>{{ record.otp }}</span></p>
+          <p class="small-note">Share this OTP with the app to verify checkout.</p>
+        {% endif %}
+      </div>
+
+      <form action="{{ url_for('checkout') }}" method="post" class="auth-form">
+        <label for="otp">OTP</label>
+        <input id="otp" name="otp" type="text" placeholder="Enter OTP" required>
+        <button type="submit" class="btn">Verify & Checkout</button>
+      </form>
+    {% else %}
+      <div class="card notice-card">
+        <p>No active parking record was found. Please check in first.</p>
+        <a href="{{ url_for('checkin') }}" class="btn">Register Vehicle</a>
+      </div>
+    {% endif %}
+  </section>
+{% endblock %}
