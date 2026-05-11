@@ -3,6 +3,18 @@
     "9620282414": {
       "mobile": "9620282414",
       "registered_at": "2026-05-11 16:56:05"
+    },
+    "6576543434": {
+      "mobile": "6576543434",
+      "registered_at": "2026-05-11 18:08:14"
+    },
+    "9329473628": {
+      "mobile": "9329473628",
+      "registered_at": "2026-05-11 18:11:43"
+    },
+    "6754567890": {
+      "mobile": "6754567890",
+      "registered_at": "2026-05-11 18:15:45"
     }
   },
   "records": [
@@ -15,6 +27,42 @@
       "notes": "check",
       "checkin_time": "2026-05-11 17:01:23",
       "checkout_time": "2026-05-11 17:02:29",
+      "otp": null,
+      "otp_requested_at": null
+    },
+    {
+      "id": "6576543434-2",
+      "mobile": "6576543434",
+      "vehicle_type": "car",
+      "vehicle_number": "ABC-121",
+      "vehicle_model": "Black",
+      "notes": "test",
+      "checkin_time": "2026-05-11 18:08:41",
+      "checkout_time": null,
+      "otp": null,
+      "otp_requested_at": null
+    },
+    {
+      "id": "9329473628-3",
+      "mobile": "9329473628",
+      "vehicle_type": "bike",
+      "vehicle_number": "ABC-333",
+      "vehicle_model": "car",
+      "notes": "test22",
+      "checkin_time": "2026-05-11 18:12:04",
+      "checkout_time": "2026-05-11 18:12:45",
+      "otp": null,
+      "otp_requested_at": null
+    },
+    {
+      "id": "6754567890-4",
+      "mobile": "6754567890",
+      "vehicle_type": "scooter",
+      "vehicle_number": "ABC-112",
+      "vehicle_model": "old",
+      "notes": "test232",
+      "checkin_time": "2026-05-11 18:16:15",
+      "checkout_time": "2026-05-11 18:16:52",
       "otp": null,
       "otp_requested_at": null
     }

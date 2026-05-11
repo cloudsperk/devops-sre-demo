@@ -67,6 +67,11 @@ def count_requests():
 def index():
     if get_mobile():
         return redirect(url_for('dashboard'))
+    return render_template('home.html')
+
+
+@app.route('/login', methods=['GET'])
+def login_page():
     return render_template('login.html')
 
 

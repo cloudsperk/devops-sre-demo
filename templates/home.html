@@ -1,0 +1,29 @@
+{% extends 'layout.html' %}
+
+{% block title %}ParkSmart | Home{% endblock %}
+
+{% block content %}
+  <section class="hero">
+    <h1>Park Smart, Drive Safe</h1>
+    <p class="motto">Secure your vehicle in one simple app — login with your mobile number, check in, and checkout with OTP verification.</p>
+    <div class="home-actions">
+      <a href="{{ url_for('login_page') }}" class="btn">Login with Mobile</a>
+      <a href="{{ url_for('checkin') }}" class="ghost-button">Check In Now</a>
+    </div>
+  </section>
+
+  <section class="home-features">
+    <div class="feature-card">
+      <h3>Mobile Login</h3>
+      <p>Quick access using only your mobile number. No password needed.</p>
+    </div>
+    <div class="feature-card">
+      <h3>Parking Check-In</h3>
+      <p>Register your vehicle details and timestamp when you arrive.</p>
+    </div>
+    <div class="feature-card">
+      <h3>OTP Checkout</h3>
+      <p>Secure exit flow with OTP verification to close your session.</p>
+    </div>
+  </section>
+{% endblock %}
