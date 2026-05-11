@@ -65,6 +65,18 @@
       "checkout_time": "2026-05-11 18:16:52",
       "otp": null,
       "otp_requested_at": null
+    },
+    {
+      "id": "9620282414-5",
+      "mobile": "9620282414",
+      "vehicle_type": "car",
+      "vehicle_number": "ABC-1357",
+      "vehicle_model": "White",
+      "notes": "Test111",
+      "checkin_time": "2026-05-11 18:45:17",
+      "checkout_time": "2026-05-11 18:45:49",
+      "otp": null,
+      "otp_requested_at": null
     }
   ]
 }
